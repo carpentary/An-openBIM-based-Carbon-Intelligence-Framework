@@ -1,0 +1,15 @@
+# Semantics: stage-level assessment totals over the governed release graph,
+# aligned with KnowledgeIndex.project_overview main-structure baseline totals.
+PREFIX msca: <http://bimlca.uni.edu/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+
+SELECT ?stage (SUM(?v) AS ?stageCarbon) WHERE {
+  ?emission a msca:CarbonEmission ;
+            msca:belongsToStage ?stage ;
+            msca:hasEmissionQuantity ?quantity .
+  ?quantity qudt:numericValue ?v .
+  VALUES ?stage { msca:A1-A3_ProductStage msca:A4_TransportationStage msca:A5_ConstructionStage }
+}
+GROUP BY ?stage
+ORDER BY ?stage

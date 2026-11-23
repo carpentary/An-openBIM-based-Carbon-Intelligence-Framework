@@ -1,0 +1,68 @@
+# Use FILTER IN for the permitted mapping statuses in the SHACL query.
+@prefix msca: <http://bimlca.uni.edu/ontology#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+
+msca:ExecutableElementMappingShape a sh:NodeShape ;
+    rdfs:label "Executable element mapping shape"@en ;
+    sh:sparql [ sh:message "An element typed with an uncovered or partially covered ElementType is not executable without an explicit project-specific mapping or readiness exception."@en ;
+            sh:select """
+PREFIX msca: <http://bimlca.uni.edu/ontology#>
+SELECT $this WHERE {
+  $this msca:hasElementType ?t .
+  ?t msca:hasRuleCoverageStatus ?status .
+  FILTER(?status IN (msca:RuleCoverage_Uncovered, msca:RuleCoverage_Partial))
+  FILTER NOT EXISTS { $this msca:requiresWorkPackageTemplate ?template }
+}""" ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass msca:PhysicalElement .
+
+# A distance correction records one value, unit, timestamp, and generating transaction.
+msca:UserCorrection a rdfs:Class , owl:Class ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:label "User correction"@en .
+
+msca:UserCorrectionShape a sh:NodeShape ;
+    rdfs:label "User correction shape"@en ;
+    sh:property [
+            sh:datatype xsd:decimal ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:message "A user correction carries exactly one decimal distance value."@en ;
+            sh:path msca:hasTransportDistance ;
+            sh:severity sh:Violation ;
+        ],
+        [
+            sh:class qudt:Unit ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:message "A user correction names exactly one unit."@en ;
+            sh:path msca:hasParameterUnit ;
+            sh:severity sh:Violation ;
+        ],
+        [
+            sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:message "A user correction records its generation time."@en ;
+            sh:path prov:generatedAtTime ;
+            sh:severity sh:Violation ;
+        ],
+        [
+            sh:nodeKind sh:IRI ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:message "A user correction names its generating transaction."@en ;
+            sh:path prov:wasGeneratedBy ;
+            sh:severity sh:Violation ;
+        ] ;
+    sh:targetClass msca:UserCorrection .
+
+# Unit declaration used when validating a distance correction.
+unit:KiloM a qudt:Unit ;
+    rdfs:label "Kilometre"@en .

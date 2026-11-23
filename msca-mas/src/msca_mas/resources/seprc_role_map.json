@@ -1,0 +1,709 @@
+{
+ "map_version": 1,
+ "role_roots": {
+  "S": [
+   "http://bimlca.uni.edu/ontology#EngineeringSystem"
+  ],
+  "E": [
+   "http://bimlca.uni.edu/ontology#Element"
+  ],
+  "P": [
+   "http://bimlca.uni.edu/ontology#ConstructionProcess"
+  ],
+  "R": [
+   "http://bimlca.uni.edu/ontology#Resource",
+   "http://bimlca.uni.edu/ontology#ResourceDescriptor"
+  ],
+  "C": [
+   "http://bimlca.uni.edu/ontology#CarbonEmission",
+   "http://bimlca.uni.edu/ontology#CarbonAssessment"
+  ]
+ },
+ "explicit_class_roles": {
+  "http://bimlca.uni.edu/ontology#Project": [
+   "S"
+  ],
+  "http://bimlca.uni.edu/ontology#SiteContext": [
+   "S"
+  ],
+  "http://bimlca.uni.edu/ontology#WorkPackageTemplate": [
+   "P"
+  ],
+  "http://bimlca.uni.edu/ontology#CPD_Entry": [
+   "P"
+  ],
+  "http://bimlca.uni.edu/ontology#EFD_Entry": [
+   "R"
+  ],
+  "http://bimlca.uni.edu/ontology#EFD_Factor": [
+   "R"
+  ],
+  "http://bimlca.uni.edu/ontology#ResourceSubstitution": [
+   "R"
+  ],
+  "http://bimlca.uni.edu/ontology#AlternativeScenario": [
+   "C"
+  ],
+  "http://bimlca.uni.edu/ontology#ScenarioResult": [
+   "C"
+  ],
+  "http://bimlca.uni.edu/ontology#CarbonIntensityIndicator": [
+   "C"
+  ],
+  "http://bimlca.uni.edu/ontology#CarbonPerformanceIndicator": [
+   "C"
+  ],
+  "http://bimlca.uni.edu/ontology#CarbonAggregationActivity": [
+   "C"
+  ],
+  "http://bimlca.uni.edu/ontology#CalculationReadinessAssessment": [
+   "C"
+  ],
+  "http://bimlca.uni.edu/ontology#AssessmentScope": [
+   "SCOPE"
+  ],
+  "http://bimlca.uni.edu/ontology#QuantityInterval": [
+   "SCOPE"
+  ],
+  "http://bimlca.uni.edu/ontology#SemanticAssertion": [
+   "SCOPE"
+  ],
+  "http://bimlca.uni.edu/ontology#ClassificationAssertion": [
+   "SCOPE"
+  ],
+  "http://bimlca.uni.edu/ontology#FactorCandidateEvaluation": [
+   "R"
+  ],
+  "http://bimlca.uni.edu/ontology#FactorSelectionDecision": [
+   "R"
+  ],
+  "http://bimlca.uni.edu/ontology#FactorOverride": [
+   "R"
+  ],
+  "http://bimlca.uni.edu/ontology#ParameterOverride": [
+   "R"
+  ],
+  "http://bimlca.uni.edu/ontology#WastageOverride": [
+   "R"
+  ],
+  "http://bimlca.uni.edu/ontology#ReuseCycleOverride": [
+   "R"
+  ],
+  "http://bimlca.uni.edu/ontology#TransportLeg": [
+   "R"
+  ],
+  "http://bimlca.uni.edu/ontology#CompetencyQuestion": [
+   "SCOPE"
+  ],
+  "http://bimlca.uni.edu/ontology#ElementType": [
+   "E"
+  ],
+  "http://bimlca.uni.edu/ontology#EarthworkZone": [
+   "E"
+  ]
+ },
+ "classes_total": 170,
+ "classes_mapped": 100,
+ "entries": {
+  "http://bimlca.uni.edu/ontology#AlternativeScenario": {
+   "roles": [
+    "C"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#Anchoring": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#AssessmentScope": {
+   "roles": [
+    "SCOPE"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#AuxiliaryStructureSystem": {
+   "roles": [
+    "S"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#BackfillZone": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#Beam": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#Bracing": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#BracingLevel": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#CPD_Entry": {
+   "roles": [
+    "P"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#CalculationReadinessAssessment": {
+   "roles": [
+    "C"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#CarbonAggregationActivity": {
+   "roles": [
+    "C"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#CarbonAssessment": {
+   "roles": [
+    "C"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#CarbonEmission": {
+   "roles": [
+    "C"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#CarbonIntensityIndicator": {
+   "roles": [
+    "C"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#CarbonPerformanceIndicator": {
+   "roles": [
+    "C"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#ClassificationAssertion": {
+   "roles": [
+    "SCOPE"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#Column": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#CompetencyQuestion": {
+   "roles": [
+    "SCOPE"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#CompositePileWall": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#ConcreteEngineering": {
+   "roles": [
+    "P"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#ConstructionProcess": {
+   "roles": [
+    "P"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#DemolitionEngineering": {
+   "roles": [
+    "P"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#DewateringEngineering": {
+   "roles": [
+    "P"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#DewateringSystem": {
+   "roles": [
+    "S"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#Door": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#EFD_Entry": {
+   "roles": [
+    "R"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#EFD_Factor": {
+   "roles": [
+    "R"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#EarthworkEngineering": {
+   "roles": [
+    "P"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#EarthworkSystem": {
+   "roles": [
+    "S"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#EarthworkZone": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#Element": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#ElementType": {
+   "roles": [
+    "E"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#EnclosureStructureSystem": {
+   "roles": [
+    "S"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#EnergyDescriptor": {
+   "roles": [
+    "R"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#EngineeringPile": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#EngineeringSystem": {
+   "roles": [
+    "S"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#EntranceAndExit": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#EquipmentDescriptor": {
+   "roles": [
+    "R"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#EquipmentRoom": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#EquipmentStorey": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#ExcavationSupportSystem": {
+   "roles": [
+    "S"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#ExcavationZone": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#FactorCandidateEvaluation": {
+   "roles": [
+    "R"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#FactorOverride": {
+   "roles": [
+    "R"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#FactorSelectionDecision": {
+   "roles": [
+    "R"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#Footing": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#FormworkEngineering": {
+   "roles": [
+    "P"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#FoundationPit": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#FoundationPitSystem": {
+   "roles": [
+    "S"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#FoundationPitZone": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#GroundImprovementSystem": {
+   "roles": [
+    "S"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#HorizontalBracingSystem": {
+   "roles": [
+    "S"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#InternalStructureSystem": {
+   "roles": [
+    "S"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#MainFrameSystem": {
+   "roles": [
+    "S"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#MasonryEngineering": {
+   "roles": [
+    "P"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#MaterialDescriptor": {
+   "roles": [
+    "R"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#MetalComponentEngineering": {
+   "roles": [
+    "P"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#MiscellaneousEngineering": {
+   "roles": [
+    "P"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#Opening": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#ParameterOverride": {
+   "roles": [
+    "R"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#Passageway": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#PhysicalElement": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#Pile": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#PlatformLevel": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#Project": {
+   "roles": [
+    "S"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#ProjectWorkPackage": {
+   "roles": [
+    "P"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#PublicRoom": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#QuantityInterval": {
+   "roles": [
+    "SCOPE"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#Railing": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#ReinforcementBracingSystem": {
+   "roles": [
+    "S"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#ReinforcementEngineering": {
+   "roles": [
+    "P"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#Resource": {
+   "roles": [
+    "R"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#ResourceDescriptor": {
+   "roles": [
+    "R"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#ResourceInstance": {
+   "roles": [
+    "R"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#ResourceSubstitution": {
+   "roles": [
+    "R"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#RetainingPile": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#ReuseCycleOverride": {
+   "roles": [
+    "R"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#ScaffoldingEngineering": {
+   "roles": [
+    "P"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#ScenarioResult": {
+   "roles": [
+    "C"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#SemanticAssertion": {
+   "roles": [
+    "SCOPE"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#SiteContext": {
+   "roles": [
+    "S"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#Slab": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#SpatialElement": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#Stair": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#StationBox": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#StationHall": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#StationStorey": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#StationStructureSystem": {
+   "roles": [
+    "S"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#SteelEngineering": {
+   "roles": [
+    "P"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#SupportColumnPile": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#TransportLeg": {
+   "roles": [
+    "P"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#TransportationEngineering": {
+   "roles": [
+    "P"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#VehicleDescriptor": {
+   "roles": [
+    "R"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#VerticalRetainingSystem": {
+   "roles": [
+    "S"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#Wall": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#WastageOverride": {
+   "roles": [
+    "R"
+   ],
+   "source": "explicit_map"
+  },
+  "http://bimlca.uni.edu/ontology#WaterproofingEngineering": {
+   "roles": [
+    "P"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#Window": {
+   "roles": [
+    "E"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#WorkPackage": {
+   "roles": [
+    "P"
+   ],
+   "source": "tbox_root"
+  },
+  "http://bimlca.uni.edu/ontology#WorkPackageTemplate": {
+   "roles": [
+    "P"
+   ],
+   "source": "explicit_map"
+  }
+ }
+}

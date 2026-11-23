@@ -1,0 +1,23 @@
+# Count work packages and sum quantities by template and selected CPD entry.
+PREFIX msca: <http://bimlca.uni.edu/ontology#>
+PREFIX cpds: <http://bimlca.uni.edu/cpd/schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+
+SELECT ?template (COUNT(?wp) AS ?workPackageCount) (SUM(COALESCE(?qv, 0)) AS ?quantityValue) (MIN(?qu) AS ?quantityUnit) WHERE {
+  ?wp a msca:ProjectWorkPackage ;
+      msca:instantiatedFrom ?template .
+  OPTIONAL {
+    ?wp msca:hasQuantity ?workQuantity .
+    OPTIONAL { ?workQuantity qudt:numericValue ?qv . }
+    OPTIONAL { ?workQuantity qudt:unit ?qu . }
+  }
+  OPTIONAL {
+    ?wp msca:hasCPDSelectionDecision ?selection .
+    ?selection cpds:selectedOperationalEntry ?cpdEntry .
+  }
+  FILTER(CONTAINS(LCASE(STR(?template)), LCASE(?term)))
+}
+GROUP BY ?template
+ORDER BY DESC(?workPackageCount)
+LIMIT 30

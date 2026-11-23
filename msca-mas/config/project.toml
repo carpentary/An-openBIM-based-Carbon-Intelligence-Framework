@@ -1,0 +1,70 @@
+[project]
+id = "metro-project"
+name = "Metro station"
+
+[ifc.main]
+path = "../data/ifc/main.ifc"
+role = "main_structure"
+
+[ifc.enclosure]
+path = "../data/ifc/enclosure.ifc"
+role = "enclosure_structure"
+
+[ontology]
+tbox = "../data/ontology/tbox.ttl"
+complete_schema = "../data/ontology/schema.ttl"
+catalogue = "../data/ontology/catalogue.ttl"
+swrl = "../data/ontology/rules.ttl"
+shacl = "../data/ontology/shapes.ttl"
+cpd_reference = "../data/reference/cpd.ttl"
+efd_reference = "../data/reference/efd.ttl"
+release_report = "../data/ontology/release_verification_report.json"
+swrl_regression_input = "../data/ontology/checks/swrl_input.ttl"
+swrl_chainer = "../data/ontology/checks/swrl_forward_chainer.py"
+cq_catalogue = "../data/ontology/cq/catalogue.csv"
+cq_manifest = "../data/ontology/cq/manifest.json"
+cq_query_dir = "../data/ontology/cq/queries"
+cq_fixture = "../data/ontology/cq/fixture.ttl"
+
+[ckg]
+root = "../data/ckg"
+manifest = "../data/ckg/release_manifest.json"
+summary = "../data/ckg/data/project/ckg/Station01-CKG-Summary-RC4.ttl"
+shard_dir = "../data/ckg/data/project/ckg"
+shard_glob = "Station01-CKG-PWP-*.ttl"
+domain_abox = "../data/ckg/data/project/source_abox/domain_abox.ttl"
+
+[topology]
+governed_facts = "../data/topology/facts.ttl"
+unresolved_register = "../data/topology/unresolved.csv"
+coordinate_unit = "millimetre"
+reconstructed_connection_epsilon = 1.0
+reconstructed_containment_epsilon = 0.001
+
+[assessment]
+included_stages = ["A1-A3_ProductStage", "A4_TransportationStage", "A5_ConstructionStage"]
+known_pending = []
+policy = "fail_closed"
+
+[reference_case]
+directory = "../data/reference"
+
+[runtime]
+cache_dir = "../.cache"
+artifact_dir = "../artifacts"
+transaction_dir = "../runtime/transactions"
+
+[mas.metadata]
+backend = "auto"
+dense_model_id = "BAAI/bge-m3"
+reranker_model_id = "BAAI/bge-reranker-v2-m3"
+dense_model_revision = "5617a9f61b028005a4858fdac845db406aefb181"
+reranker_model_revision = "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e"
+offline = true
+max_rounds = 3
+top_k = 8
+expansion_hops = 2
+candidate_limit = 80
+
+[mas.structured_output]
+max_retries = 2

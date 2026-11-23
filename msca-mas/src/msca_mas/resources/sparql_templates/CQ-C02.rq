@@ -1,0 +1,22 @@
+# Semantics aligned with KnowledgeIndex.element_trace: the governed
+# System -> Element -> ProjectWorkPackage -> ResourceInstance -> CarbonEmission
+# chain for one element (binding ?element).
+PREFIX msca: <http://bimlca.uni.edu/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+
+SELECT ?system ?element ?workPackage ?resource ?descriptor ?factor ?stage ?emissionValue WHERE {
+  ?workPackage a msca:ProjectWorkPackage ;
+               msca:constructsElement ?element .
+  OPTIONAL { ?element msca:belongsToSystem ?system . }
+  ?resource msca:consumedByWorkPackage ?workPackage ;
+            msca:describedBy ?descriptor .
+  ?emission a msca:CarbonEmission ;
+            msca:calculatedFromResource ?resource ;
+            msca:calculatedUsingFactor ?factor ;
+            msca:belongsToStage ?stage ;
+            msca:hasEmissionQuantity ?quantity .
+  ?quantity qudt:numericValue ?emissionValue .
+}
+ORDER BY ?workPackage ?resource ?stage
+LIMIT 250

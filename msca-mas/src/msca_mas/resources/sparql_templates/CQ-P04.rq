@@ -1,0 +1,21 @@
+# Semantics aligned with KnowledgeIndex.resource_breakdown: per descriptor and
+# stage, summed emissions and distinct resource counts, filtered by a term over
+# the descriptor IRI (binding ?term) and optionally by stage (binding ?stage).
+PREFIX msca: <http://bimlca.uni.edu/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+
+SELECT ?descriptor ?stage (SUM(?v) AS ?emissionValue) (MIN(?u) AS ?emissionUnit) (COUNT(DISTINCT ?resource) AS ?resourceCount) WHERE {
+  ?resource a msca:ResourceInstance ;
+            msca:describedBy ?descriptor .
+  ?emission msca:calculatedFromResource ?resource ;
+            msca:belongsToStage ?stage ;
+            msca:hasEmissionQuantity ?quantity .
+  ?quantity qudt:numericValue ?v ; qudt:unit ?u .
+  FILTER(CONTAINS(LCASE(STR(?descriptor)), LCASE(?term)))
+  FILTER(!BOUND(?stageFilter) || CONTAINS(LCASE(STR(?stage)), LCASE(?stageFilter)))
+}
+GROUP BY ?descriptor ?stage
+ORDER BY DESC(?emissionValue)
+LIMIT 30
