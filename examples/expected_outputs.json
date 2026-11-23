@@ -1,0 +1,13 @@
+{
+  "data_kind": "synthetic arithmetic expectations",
+  "slab_volume_m3": 12.0,
+  "excavation_volume_m3": 120.0,
+  "soil_layer_volumes_m3": {"lower": 48.0, "upper": 72.0},
+  "concrete_demand_m3": 12.24,
+  "stage_totals_kgco2e": {
+    "A1-A3_ProductStage": 3672.0,
+    "A4_TransportationStage": 117.504,
+    "A5_ConstructionStage": 60.0
+  },
+  "total_kgco2e": 3849.504
+}

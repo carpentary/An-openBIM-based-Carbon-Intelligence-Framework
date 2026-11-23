@@ -1,0 +1,21 @@
+{
+  "data_kind": "synthetic",
+  "model_unit": "m",
+  "design_bottom_elevation_m": -5.0,
+  "connection_tolerance_m": 0.005,
+  "containment_tolerance_m": 0.00001,
+  "concrete_density_t_per_m3": 2.4,
+  "delivery_distance_km": 40.0,
+  "excavation_domain": {
+    "xmin": -3.0,
+    "ymin": -2.0,
+    "xmax": 3.0,
+    "ymax": 2.0,
+    "bottom_z": -5.0,
+    "site_z": 0.0
+  },
+  "soil_layers": [
+    {"name": "lower", "bottom_z": -5.0, "top_z": -3.0},
+    {"name": "upper", "bottom_z": -3.0, "top_z": 0.0}
+  ]
+}

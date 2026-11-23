@@ -1,0 +1,42 @@
+{
+  "data_kind": "Anonymized aggregate reference inputs, not the synthetic IFC example.",
+  "unit": "kgCO2e",
+  "project_total": 125485065.65922503,
+  "stage_totals": {
+    "A1-A3_ProductStage": 88135440.71343471,
+    "A4_TransportationStage": 8881478.700144727,
+    "A5_ConstructionStage": 28468146.245645598
+  },
+  "scope_totals": {
+    "main_structure": 48292826.544307835,
+    "enclosure_structure": 64076994.06964907,
+    "foundation_pit": 13115245.045268117
+  },
+  "scope_a4": {
+    "main_structure": 5237217.382404427,
+    "enclosure_structure": 3176249.307204299,
+    "foundation_pit": 468012.010536
+  },
+  "foundation_reference": {
+    "carbon": 13115245.045268117,
+    "plan_utilisation_factor": 0.9
+  },
+  "transport_defaults": [
+    {
+      "material_code": "M-1-7",
+      "name": "Cement-soil",
+      "distance_km": 50.0
+    },
+    {
+      "material_code": "M-1-9",
+      "name": "Rigid Foam Plastic Board",
+      "distance_km": 50.0
+    },
+    {
+      "material_code": "M-3-2",
+      "name": "Composite Ordinary Portland Cement",
+      "distance_km": 40.0
+    }
+  ],
+  "concrete_a1_a3": 28798675.58713109
+}

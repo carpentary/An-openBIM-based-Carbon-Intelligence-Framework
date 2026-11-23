@@ -1,0 +1,10 @@
+PREFIX msca: <http://bimlca.uni.edu/ontology#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+SELECT ?stage (SUM(?value) AS ?carbon) ?unit WHERE {
+  ?emission a msca:CarbonEmission ;
+    msca:belongsToStage ?stage ;
+    msca:hasEmissionQuantity ?quantity .
+  ?quantity qudt:numericValue ?value ; qudt:unit ?unit .
+}
+GROUP BY ?stage ?unit
+ORDER BY ?stage

@@ -1,0 +1,4 @@
+factor_id,resource_kind,activity_unit,factor_value,factor_unit,stage,source,synthetic
+EX-PRODUCT,material,m3,300,kgCO2e/m3,A1-A3_ProductStage,Illustrative value not a published emission factor,true
+EX-EQUIPMENT,equipment,shift,20,kgCO2e/shift,A5_ConstructionStage,Illustrative value not a published emission factor,true
+EX-TRANSPORT,transport,t_km,0.1,kgCO2e/t_km,A4_TransportationStage,Illustrative value not a published emission factor,true

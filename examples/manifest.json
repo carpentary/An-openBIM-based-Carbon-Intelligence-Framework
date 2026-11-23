@@ -1,0 +1,75 @@
+{
+  "scope": "Representative public materials, not the full study data or benchmark.",
+  "ontology_rule_count": 3,
+  "query_count": 15,
+  "normal_query_count": 9,
+  "trap_query_count": 6,
+  "synthetic_inputs": [
+    "ifc/station_fragment.ifc",
+    "reference/cpd.csv",
+    "reference/efd.csv",
+    "reference/context.json"
+  ],
+  "files": {
+    "benchmark/queries.csv": {
+      "sha256": "ac521e92a956facbe084575d4aa5c3d9135501ceb4dc836157e6410a716fb2ce",
+      "bytes": 5763
+    },
+    "benchmark/queries_and_ground_truth.json": {
+      "sha256": "e9a654c7d337a18ece0eb5ffd96f962a0d003f43bad69711f8470483b339c25b",
+      "bytes": 196274
+    },
+    "benchmark/reference_inputs.json": {
+      "sha256": "cc333c25240c7e2929c6f0abb29050b11277bba88a5e39d18dba2f44925e8558",
+      "bytes": 1121
+    },
+    "check_query_references.py": {
+      "sha256": "ed068c6cf56e25c0f6242f471930f3d979434342d1b0499ff3c313aadfcf9a6b",
+      "bytes": 3726
+    },
+    "expected_outputs.json": {
+      "sha256": "3cc50168fe4405c23aa4757ba59e7b19bc6cbf0710472a5927cdcffe0eb8a121",
+      "bytes": 370
+    },
+    "ifc/station_fragment.ifc": {
+      "sha256": "b7b3a2489e5d26b030ed1987a246c31aa0e1383243b71abc105a802fd6c858c3",
+      "bytes": 2342
+    },
+    "ontology/rules.ttl": {
+      "sha256": "c3d7dbacfa857963fe1add6afe6151949da9d673858ec9863cf1de6d09dc7922",
+      "bytes": 4409
+    },
+    "ontology/schema.ttl": {
+      "sha256": "6dba60be485f130701faec3098e7797b9875a988388af0f3561f3e21e4b41721",
+      "bytes": 10066
+    },
+    "ontology/shapes.ttl": {
+      "sha256": "cacc927d0613ebd116e6d0032ff9f7af245cb287eea819d14f73a3282fc77777",
+      "bytes": 1134
+    },
+    "ontology/total_by_stage.rq": {
+      "sha256": "72fd442a634098221c40279f67ffa877a707c2e179d178e38d4db7d7505dc54c",
+      "bytes": 351
+    },
+    "README.md": {
+      "sha256": "f0a52096e4593f19fe2dcc97f7acbeb5ffe95c330d9950f800d64737b0831ff9",
+      "bytes": 4269
+    },
+    "reference/context.json": {
+      "sha256": "a5759646dcd792a696ae4f776d26329509e516f152b29a81b0b6010c42588598",
+      "bytes": 504
+    },
+    "reference/cpd.csv": {
+      "sha256": "008c515d1fd1658556ffd0cf33c672c12158378a8e6514ce60f90f466135db8d",
+      "bytes": 419
+    },
+    "reference/efd.csv": {
+      "sha256": "59f7a3ec979c7743a914d9c774b0cac835596c84cc4d48319e9e604287310e59",
+      "bytes": 443
+    },
+    "run_example.py": {
+      "sha256": "f9cc3e0b70d00d706bb5e3e2f84999d88e7501822222414fd5f814217265a859",
+      "bytes": 11975
+    }
+  }
+}

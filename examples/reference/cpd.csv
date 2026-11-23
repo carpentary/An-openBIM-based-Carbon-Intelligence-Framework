@@ -1,0 +1,4 @@
+entry_id,template,activity,work_unit,reference_quantity,resource_code,resource_kind,quota,resource_unit,factor_id,synthetic
+EX-CONCRETE,WPT_SLAB_BOTTOM,Concrete placement,m3,1,EX-CONCRETE-MAT,material,1.02,m3,EX-PRODUCT,true
+EX-CONCRETE,WPT_SLAB_BOTTOM,Concrete placement,m3,1,EX-PLACEMENT-EQ,equipment,0.05,shift,EX-EQUIPMENT,true
+EX-EXCAVATION,,Excavation,m3,1,EX-EXCAVATION-EQ,equipment,0.02,shift,EX-EQUIPMENT,true

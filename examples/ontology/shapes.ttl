@@ -1,0 +1,18 @@
+@prefix msca: <http://bimlca.uni.edu/ontology#> .
+@prefix ex: <https://example.org/msca/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:EmissionShape a sh:NodeShape ;
+    sh:targetClass msca:CarbonEmission ;
+    sh:property [ sh:path msca:calculatedFromResource ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+    sh:property [ sh:path msca:calculatedUsingFactor ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+    sh:property [ sh:path msca:belongsToStage ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in (msca:A1-A3_ProductStage msca:A4_TransportationStage msca:A5_ConstructionStage) ] ;
+    sh:property [ sh:path msca:hasEmissionQuantity ; sh:minCount 1 ; sh:maxCount 1 ; sh:node ex:CarbonQuantityShape ] .
+
+ex:CarbonQuantityShape a sh:NodeShape ;
+    sh:property [ sh:path qudt:numericValue ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:double ] ;
+    sh:property [ sh:path qudt:unit ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue unit:KiloGM-CO2_Equivalent ] .

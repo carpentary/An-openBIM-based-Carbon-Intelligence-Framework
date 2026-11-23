@@ -1,0 +1,84 @@
+@prefix bridge: <http://bimlca.uni.edu/evidence#> .
+@prefix msca: <http://bimlca.uni.edu/ontology#> .
+@prefix ns1: <http://www.w3.org/2003/11/swrl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rule: <http://bimlca.uni.edu/rule-examples#> .
+
+rule:ClassifyLowestStructuralPosition a ns1:Imp ;
+    rdfs:label "Resolve the positive lowest structural slab position"@en ;
+    msca:ruleCategory "functional-classification" ;
+    ns1:body ( [ a ns1:ClassAtom ;
+                ns1:argument1 rule:x ;
+                ns1:classPredicate msca:PhysicalElement ] [ a ns1:IndividualPropertyAtom ;
+                ns1:argument1 rule:x ;
+                ns1:argument2 bridge:VerticalRole_LowestStructuralSlab ;
+                ns1:propertyPredicate bridge:hasVerticalRole ] ) ;
+    ns1:head ( [ a ns1:IndividualPropertyAtom ;
+                ns1:argument1 rule:x ;
+                ns1:argument2 msca:Position_Bottom ;
+                ns1:propertyPredicate msca:hasFunctionalPosition ] ) .
+
+rule:ClassifyMainStructuralBottomSlab a ns1:Imp ;
+    rdfs:label "Classify a main-frame structural bottom slab"@en ;
+    msca:ruleCategory "functional-classification" ;
+    ns1:body ( [ a ns1:ClassAtom ;
+                ns1:argument1 rule:x ;
+                ns1:classPredicate msca:Slab ] [ a ns1:IndividualPropertyAtom ;
+                ns1:argument1 rule:x ;
+                ns1:argument2 <http://bimlca.uni.edu/ifc/bridge#IFCKind_IfcSlab> ;
+                ns1:propertyPredicate <http://bimlca.uni.edu/ifc/bridge#hasIfcEntityKind> ] [ a ns1:IndividualPropertyAtom ;
+                ns1:argument1 rule:x ;
+                ns1:argument2 <http://bimlca.uni.edu/ifc/bridge#IfcSlabPredefinedType_FLOOR> ;
+                ns1:propertyPredicate <http://bimlca.uni.edu/ifc/bridge#hasIfcPredefinedTypeConcept> ] [ a ns1:IndividualPropertyAtom ;
+                ns1:argument1 rule:x ;
+                ns1:argument2 bridge:Name_StructuralBottomSlab ;
+                ns1:propertyPredicate bridge:hasNormalizedNameConcept ] [ a ns1:IndividualPropertyAtom ;
+                ns1:argument1 rule:x ;
+                ns1:argument2 bridge:StructuralUsage_LoadBearingFloorPlate ;
+                ns1:propertyPredicate bridge:hasStructuralUsageConcept ] [ a ns1:IndividualPropertyAtom ;
+                ns1:argument1 rule:x ;
+                ns1:argument2 bridge:LoadBearing_True ;
+                ns1:propertyPredicate bridge:hasLoadBearingStatus ] [ a ns1:IndividualPropertyAtom ;
+                ns1:argument1 rule:x ;
+                ns1:argument2 bridge:MaterialFamily_Concrete ;
+                ns1:propertyPredicate bridge:hasMaterialFamily ] [ a ns1:IndividualPropertyAtom ;
+                ns1:argument1 rule:x ;
+                ns1:argument2 rule:s ;
+                ns1:propertyPredicate msca:belongsToSystem ] [ a ns1:ClassAtom ;
+                ns1:argument1 rule:s ;
+                ns1:classPredicate msca:MainFrameSystem ] [ a ns1:IndividualPropertyAtom ;
+                ns1:argument1 rule:x ;
+                ns1:argument2 msca:Position_Bottom ;
+                ns1:propertyPredicate msca:hasFunctionalPosition ] ) ;
+    ns1:head ( [ a ns1:IndividualPropertyAtom ;
+                ns1:argument1 rule:x ;
+                ns1:argument2 msca:Type_BottomSlab ;
+                ns1:propertyPredicate msca:hasElementType ] ) .
+
+rule:InheritProcessFamilyFromTemplate a ns1:Imp ;
+    rdfs:label "Inherit a process family after template instantiation"@en ;
+    msca:ruleCategory "template-instantiation-enrichment" ;
+    ns1:body ( [ a ns1:ClassAtom ;
+                ns1:argument1 rule:wp ;
+                ns1:classPredicate msca:ProjectWorkPackage ] [ a ns1:IndividualPropertyAtom ;
+                ns1:argument1 rule:wp ;
+                ns1:argument2 rule:template ;
+                ns1:propertyPredicate msca:instantiatedFrom ] [ a ns1:IndividualPropertyAtom ;
+                ns1:argument1 rule:template ;
+                ns1:argument2 rule:family ;
+                ns1:propertyPredicate msca:hasProcessFamily ] ) ;
+    ns1:head ( [ a ns1:IndividualPropertyAtom ;
+                ns1:argument1 rule:wp ;
+                ns1:argument2 rule:family ;
+                ns1:propertyPredicate msca:hasProcessFamily ] ) .
+
+rule:family a ns1:Variable .
+
+rule:s a ns1:Variable .
+
+rule:template a ns1:Variable .
+
+rule:wp a ns1:Variable .
+
+rule:x a ns1:Variable .

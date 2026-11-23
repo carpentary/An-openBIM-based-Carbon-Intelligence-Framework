@@ -1,0 +1,308 @@
+@prefix bridge: <http://bimlca.uni.edu/evidence#> .
+@prefix msca: <http://bimlca.uni.edu/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+bridge:LoadBearing_True a owl:NamedIndividual ;
+    rdfs:label "load-bearing true"@en .
+
+bridge:MaterialFamily_Concrete a owl:NamedIndividual ;
+    rdfs:label "concrete material family"@en .
+
+bridge:Name_StructuralBottomSlab a owl:NamedIndividual ;
+    rdfs:label "structural bottom slab name concept"@en .
+
+bridge:StructuralUsage_LoadBearingFloorPlate a owl:NamedIndividual ;
+    rdfs:label "load-bearing floor plate"@en .
+
+bridge:VerticalRole_LowestStructuralSlab a owl:NamedIndividual ;
+    rdfs:label "lowest structural slab"@en .
+
+bridge:hasLoadBearingStatus a owl:ObjectProperty ;
+    rdfs:label "has load-bearing status"@en .
+
+bridge:hasMaterialFamily a owl:ObjectProperty ;
+    rdfs:label "has material family"@en .
+
+bridge:hasNormalizedNameConcept a owl:ObjectProperty ;
+    rdfs:label "has normalized name concept"@en .
+
+bridge:hasStructuralUsageConcept a owl:ObjectProperty ;
+    rdfs:label "has structural usage concept"@en .
+
+bridge:hasVerticalRole a owl:ObjectProperty ;
+    rdfs:label "has resolved vertical role"@en .
+
+<http://bimlca.uni.edu/ifc/bridge#IFCKind_IfcSlab> a <http://bimlca.uni.edu/ifc/bridge#IfcEntityKind>,
+        owl:NamedIndividual ;
+    rdfs:label "IfcSlab"@en .
+
+<http://bimlca.uni.edu/ifc/bridge#IfcSlabPredefinedType_FLOOR> a <http://bimlca.uni.edu/ifc/bridge#IFCPredefinedTypeConcept>,
+        owl:NamedIndividual ;
+    rdfs:label "IfcSlab.FLOOR"@en .
+
+<http://bimlca.uni.edu/ifc/bridge#hasIfcEntityKind> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has IFC entity kind"@en,
+        "具有IFC实体类别"@zh ;
+    rdfs:domain <http://bimlca.uni.edu/ifc/bridge#IFCEntityRecord> ;
+    rdfs:range <http://bimlca.uni.edu/ifc/bridge#IfcEntityKind> .
+
+<http://bimlca.uni.edu/ifc/bridge#hasIfcPredefinedTypeConcept> a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has IFC predefined-type concept"@en,
+        "具有IFC预定义类型概念"@zh ;
+    rdfs:domain <http://bimlca.uni.edu/ifc/bridge#IFCEntityRecord> ;
+    rdfs:range <http://bimlca.uni.edu/ifc/bridge#IFCPredefinedTypeConcept> .
+
+msca:A1-A3_ProductStage a msca:LifeCycleStage,
+        owl:NamedIndividual ;
+    rdfs:label "A1-A3 Product Stage"@en,
+        "A1-A3 产品阶段"@zh .
+
+msca:A4_TransportationStage a msca:LifeCycleStage,
+        owl:NamedIndividual ;
+    rdfs:label "A4 Transportation Stage"@en,
+        "A4 运输阶段"@zh .
+
+msca:A5_ConstructionStage a msca:LifeCycleStage,
+        owl:NamedIndividual ;
+    rdfs:label "A5 Construction Stage"@en,
+        "A5 施工阶段"@zh .
+
+msca:CPD_Entry a owl:Class ;
+    rdfs:label "CPD Entry"@en,
+        "CPD工艺条目"@zh ;
+    rdfs:subClassOf prov:Entity .
+
+msca:CPD_ResourceQuota a owl:Class ;
+    rdfs:label "CPD Resource Quota"@en,
+        "CPD资源消耗定额"@zh ;
+    rdfs:subClassOf prov:Entity .
+
+msca:EFD_Entry a owl:Class ;
+    rdfs:label "EFD Entry"@en,
+        "EFD排放因子条目"@zh ;
+    rdfs:subClassOf prov:Entity .
+
+msca:MainFrameSystem a owl:Class ;
+    rdfs:label "Main Frame System"@en,
+        "主体框架系统"@zh ;
+    rdfs:subClassOf msca:StationStructureSystem .
+
+msca:PF_Concrete a msca:ProcessFamily,
+        owl:NamedIndividual ;
+    rdfs:label "Concrete engineering"@en,
+        "混凝土工程"@zh .
+
+msca:Position_Bottom a msca:FunctionalPosition,
+        owl:NamedIndividual ;
+    rdfs:label "Bottom functional position"@en,
+        "底部功能位置"@zh .
+
+msca:Slab a owl:Class ;
+    rdfs:label "Slab"@en,
+        "板"@zh ;
+    rdfs:subClassOf msca:PhysicalElement .
+
+msca:Type_BottomSlab a msca:ElementType,
+        owl:NamedIndividual ;
+    rdfs:label "Bottom Slab"@en,
+        "底板"@zh .
+
+msca:belongsToStage a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "belongs to life-cycle stage"@en,
+        "belongs to stage"@en,
+        "属于生命周期阶段"@zh,
+        "属于阶段"@zh ;
+    rdfs:domain msca:CarbonEmission ;
+    rdfs:range msca:LifeCycleStage .
+
+msca:belongsToSystem a owl:ObjectProperty ;
+    rdfs:label "belongs to system"@en,
+        "属于系统"@zh ;
+    rdfs:domain msca:Element ;
+    rdfs:range msca:EngineeringSystem .
+
+msca:calculatedFromResource a owl:ObjectProperty ;
+    rdfs:label "calculated from resource instance"@en,
+        "基于资源实例计算"@zh ;
+    rdfs:domain msca:CarbonEmission ;
+    rdfs:range msca:ResourceInstance .
+
+msca:calculatedUsingFactor a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "calculated using factor"@en,
+        "使用排放因子计算"@zh ;
+    rdfs:domain msca:CarbonEmission ;
+    rdfs:range msca:EFD_Factor .
+
+msca:describedBy a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "described by"@en,
+        "is described by resource descriptor"@en,
+        "由资源描述符描述"@zh,
+        "被描述"@zh ;
+    rdfs:domain msca:ResourceInstance ;
+    rdfs:range msca:ResourceDescriptor .
+
+msca:hasActualQuantity a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has actual quantity"@en,
+        "具有实际数量"@zh,
+        "具有实际用量"@zh ;
+    rdfs:domain msca:ResourceInstance ;
+    rdfs:range <http://qudt.org/schema/qudt/QuantityValue> .
+
+msca:hasElementType a owl:ObjectProperty ;
+    rdfs:label "has element type"@en,
+        "具有构件类型"@zh ;
+    rdfs:domain msca:Element ;
+    rdfs:range msca:ElementType .
+
+msca:hasEmissionQuantity a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has emission quantity"@en,
+        "具有排放量值"@zh ;
+    rdfs:domain msca:CarbonEmission ;
+    rdfs:range <http://qudt.org/schema/qudt/QuantityValue> .
+
+msca:hasFunctionalPosition a owl:ObjectProperty ;
+    rdfs:label "has functional position"@en,
+        "具有功能位置"@zh ;
+    rdfs:domain msca:PhysicalElement ;
+    rdfs:range msca:FunctionalPosition .
+
+msca:hasProcessFamily a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has process family"@en,
+        "具有施工过程族"@zh ;
+    rdfs:range msca:ProcessFamily .
+
+msca:instantiatedFrom a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "instantiated from template"@en,
+        "从模板实例化"@zh ;
+    rdfs:domain msca:ProjectWorkPackage ;
+    rdfs:range msca:WorkPackageTemplate .
+
+msca:requiresResource a owl:ObjectProperty ;
+    rdfs:label "requires resource instance"@en,
+        "需要资源实例"@zh ;
+    rdfs:domain msca:ProjectWorkPackage ;
+    rdfs:range msca:ResourceInstance .
+
+msca:requiresWorkPackage a owl:ObjectProperty ;
+    rdfs:label "requires project work package"@en,
+        "requires work package"@en,
+        "需要工作包"@zh,
+        "需要项目工作包"@zh ;
+    rdfs:domain msca:Element ;
+    rdfs:range msca:ProjectWorkPackage .
+
+msca:ruleCategory a owl:AnnotationProperty ;
+    rdfs:label "rule category"@en,
+        "规则类别"@zh .
+
+msca:ConstructionProcess a owl:Class ;
+    rdfs:label "Construction Process"@en,
+        "施工过程"@zh ;
+    rdfs:subClassOf prov:Activity .
+
+msca:EFD_Factor a owl:Class ;
+    rdfs:label "EFD Factor"@en,
+        "EFD排放因子"@zh ;
+    rdfs:subClassOf prov:Entity .
+
+msca:Resource a owl:Class ;
+    rdfs:label "Resource"@en,
+        "资源"@zh ;
+    rdfs:subClassOf prov:Entity .
+
+msca:ResourceDescriptor a owl:Class ;
+    rdfs:label "Resource Descriptor"@en,
+        "资源描述符"@zh ;
+    rdfs:subClassOf skos:Concept .
+
+msca:StationStructureSystem a owl:Class ;
+    rdfs:label "Station Structure System"@en,
+        "车站主体系统"@zh ;
+    rdfs:subClassOf msca:EngineeringSystem .
+
+msca:WorkPackage a owl:Class ;
+    rdfs:label "Work Package"@en,
+        "工作包"@zh ;
+    rdfs:subClassOf msca:ConstructionProcess .
+
+msca:WorkPackageTemplate a owl:Class ;
+    rdfs:label "Work Package Template"@en,
+        "工作包模板"@zh ;
+    rdfs:subClassOf prov:Plan .
+
+<http://bimlca.uni.edu/ifc/bridge#IFCEntityRecord> a owl:Class ;
+    rdfs:label "IFC entity record"@en,
+        "IFC实体记录"@zh ;
+    rdfs:subClassOf prov:Entity .
+
+<http://bimlca.uni.edu/ifc/bridge#IFCPredefinedTypeConcept> a owl:Class ;
+    rdfs:label "IFC predefined-type concept"@en,
+        "IFC预定义类型概念"@zh ;
+    rdfs:subClassOf skos:Concept .
+
+<http://bimlca.uni.edu/ifc/bridge#IfcEntityKind> a owl:Class ;
+    rdfs:label "IFC entity kind"@en,
+        "IFC实体类别"@zh ;
+    rdfs:subClassOf skos:Concept .
+
+msca:ElementType a owl:Class ;
+    rdfs:label "Element Type"@en,
+        "构件类型"@zh ;
+    rdfs:subClassOf skos:Concept .
+
+msca:EngineeringSystem a owl:Class ;
+    rdfs:label "Engineering System"@en,
+        "工程系统"@zh ;
+    rdfs:subClassOf prov:Entity .
+
+msca:FunctionalPosition a owl:Class ;
+    rdfs:label "Functional Position"@en,
+        "功能位置"@zh ;
+    rdfs:subClassOf skos:Concept .
+
+msca:PhysicalElement a owl:Class ;
+    rdfs:label "Physical Element"@en,
+        "物理构件"@zh ;
+    rdfs:subClassOf msca:Element .
+
+msca:ProcessFamily a owl:Class ;
+    rdfs:label "Construction Process Family"@en,
+        "施工过程族"@zh ;
+    rdfs:subClassOf skos:Concept .
+
+msca:ProjectWorkPackage a owl:Class ;
+    rdfs:label "Project Work Package"@en,
+        "项目工作包"@zh ;
+    rdfs:subClassOf msca:WorkPackage .
+
+msca:CarbonEmission a owl:Class ;
+    rdfs:label "Carbon Emission"@en,
+        "碳排放"@zh ;
+    rdfs:subClassOf prov:Entity .
+
+msca:Element a owl:Class ;
+    rdfs:label "Element"@en,
+        "构件"@zh ;
+    rdfs:subClassOf prov:Entity .
+
+msca:LifeCycleStage a owl:Class ;
+    rdfs:label "Life Cycle Stage"@en,
+        "生命周期阶段"@zh ;
+    rdfs:subClassOf skos:Concept .
+
+msca:ResourceInstance a owl:Class ;
+    rdfs:label "Resource Instance"@en,
+        "资源实例"@zh ;
+    rdfs:subClassOf msca:Resource .
